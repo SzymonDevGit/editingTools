@@ -32,7 +32,8 @@ Every editor has its own menu for this. We have a short guide for each:
 - [CapCut](/blog/capcut-srt-subtitles/)
 - [Shotcut](/blog/shotcut-free-subtitles/) and [Kdenlive](/blog/kdenlive-free-subtitles/)
 - [Filmora](/blog/filmora-srt-subtitles/) and [Vegas Pro](/blog/vegas-pro-srt-subtitles/)
-- [YouTube](/blog/youtube-upload-srt-subtitles/), and [HandBrake](/blog/handbrake-burn-in-subtitles/) to burn them into the picture
+- [YouTube](/blog/youtube-upload-srt-subtitles/), and [HandBrake](/blog/handbrake-burn-in-subtitles/) or [Avidemux](/blog/avidemux-burn-in-subtitles/) to burn them into the picture
+- Lesser-known editors: [Lightworks](/blog/lightworks-srt-subtitles/), [OpenShot](/blog/openshot-free-subtitles/), [VSDC Free Video Editor](/blog/vsdc-free-video-editor-subtitles/) and [Kapwing](/blog/kapwing-srt-subtitles/)
 
 ## Why the timing is good
 
