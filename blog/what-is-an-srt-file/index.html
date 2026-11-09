@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is an SRT file? The subtitle format every editor understands</title>
+  <meta name="description" content="An SRT file is a plain text subtitle file with numbered lines and timings. Here&#x27;s what&#x27;s inside one, how to edit it, and how to make one for free.">
+  <link rel="canonical" href="https://edittools.szy.monster/blog/what-is-an-srt-file/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What is an SRT file? The subtitle format every editor understands">
+  <meta property="og:description" content="An SRT file is a plain text subtitle file with numbered lines and timings. Here&#x27;s what&#x27;s inside one, how to edit it, and how to make one for free.">
+  <meta property="og:url" content="https://edittools.szy.monster/blog/what-is-an-srt-file/">
+  <meta property="og:site_name" content="AutoSubtitler">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What is an SRT file? The subtitle format every editor understands", "description": "An SRT file is a plain text subtitle file with numbered lines and timings. Here's what's inside one, how to edit it, and how to make one for free.", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "author": {"@type": "Person", "name": "Szymon"}, "publisher": {"@type": "Organization", "name": "szy.monster", "url": "https://szy.monster/"}, "mainEntityOfPage": "https://edittools.szy.monster/blog/what-is-an-srt-file/"}</script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <a class="home" href="/"><h1>AutoSubtitler</h1></a>
+      <span class="by"><a href="/blog/">Blog</a></span>
+      <a class="btn btn-primary right" href="/">Make subtitles free</a>
+    </header>
+    <article class="post md">
+      <p class="crumbs"><a href="/blog/">Blog</a> › Guide</p>
+      <h1 class="post-title">What is an SRT file? The subtitle format every editor understands</h1>
+      <p class="muted small">Updated 9 November 2026 · by Szymon at szy.monster</p>
+<p>SRT (short for SubRip Text) is the most widely supported subtitle format there is. Video editors, YouTube, Vimeo, social media tools and media players like VLC all read it. If you only learn one subtitle format, learn this one.</p>
+<h2>What's inside an SRT file</h2>
+<p>An SRT file is plain text. Open one in Notepad and you'll see blocks like this:</p>
+<pre><code>1
+00:00:01,570 --&gt; 00:00:02,720
+and today I&#x27;m showing
+
+2
+00:00:02,770 --&gt; 00:00:04,670
+you my Teardown mod maker.</code></pre>
+<p>Each block has three parts:</p>
+<ol><li><b>A number</b>, counting up from 1.</li><li><b>The timing</b>: when the subtitle appears and when it disappears, as hours:minutes:seconds,milliseconds. Note the <b>comma</b> before the milliseconds, not a dot.</li><li><b>The text</b>, on one or two lines.</li></ol>
+<p>A blank line separates one subtitle from the next.</p>
+<h2>SRT vs other subtitle formats</h2>
+<ul><li><b>WebVTT (.vtt)</b> is the web version. It looks almost the same but starts with the word <code>WEBVTT</code> and uses a dot before the milliseconds. Browsers use it for the <code>&lt;track&gt;</code> element.</li><li><b>ASS/SSA</b> supports fonts, colours and positions inside the file. It's popular for anime fansubs but less widely supported by editors.</li><li><b>Embedded captions</b> (CEA-608/708) live inside the video file itself, mostly for broadcast.</li></ul>
+<p>SRT has no styling of its own. That's a good thing when you edit: the editor applies one style to the whole subtitle track, so all your subtitles look consistent.</p>
+<h2>How to edit an SRT file</h2>
+<p>Any text editor works. Keep the structure exactly as it is: number, timing line, text, blank line. If you change a time, keep the format <code>00:00:00,000</code>. Save the file as <b>UTF-8</b> so letters like ą, é or ß show correctly.</p>
+<p>Most video editors also let you edit subtitle text right on the timeline after you import the file, which is easier for small fixes.</p>
+<h2>How to make an SRT file for free</h2>
+<p>Typing out timings by hand is slow. <a href="/">AutoSubtitler</a> listens to your video with Whisper and writes the whole .srt for you, timed to the words, in your browser and without uploading anything. Then <a href="/blog/free-subtitling-for-video/">add it to your editor</a>.</p>
+    </article>
+    <aside class="cta">
+      <b>Make the .srt for free</b>
+      <span>Whisper subtitles in your browser. No sign-up, no upload, no watermark.</span>
+      <a class="btn btn-primary" href="/">Open AutoSubtitler</a>
+    </aside>
+    <nav class="related"><h2>Related</h2><ul><li><a href="/blog/davinci-resolve-free-subtitles/">Free subtitles for DaVinci Resolve: make an SRT and import it</a></li><li><a href="/blog/premiere-pro-free-subtitles/">Import free SRT subtitles into Premiere Pro</a></li><li><a href="/blog/final-cut-pro-free-subtitles/">Free subtitles in Final Cut Pro with an SRT file</a></li></ul></nav>
+    <footer class="foot">
+      <a href="/">AutoSubtitler</a>
+      <a href="/blog/">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="https://github.com/SzymonDevGit/editingTools" target="_blank" rel="noopener">Source on GitHub</a>
+      <a href="https://discord.gg/bHxaXgjpfe" target="_blank" rel="noopener">Bugs &amp; suggestions</a>
+    </footer>
+  </main>
+</body>
+</html>

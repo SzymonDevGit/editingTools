@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Polish subtitles for video, made with Whisper</title>
+  <meta name="description" content="Make Polish subtitles (napisy) for a video for free. Whisper handles Polish well; here&#x27;s how to get the spelling and names right.">
+  <link rel="canonical" href="https://edittools.szy.monster/blog/polish-subtitles-free/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Free Polish subtitles for video, made with Whisper">
+  <meta property="og:description" content="Make Polish subtitles (napisy) for a video for free. Whisper handles Polish well; here&#x27;s how to get the spelling and names right.">
+  <meta property="og:url" content="https://edittools.szy.monster/blog/polish-subtitles-free/">
+  <meta property="og:site_name" content="AutoSubtitler">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Free Polish subtitles for video, made with Whisper", "description": "Make Polish subtitles (napisy) for a video for free. Whisper handles Polish well; here's how to get the spelling and names right.", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "author": {"@type": "Person", "name": "Szymon"}, "publisher": {"@type": "Organization", "name": "szy.monster", "url": "https://szy.monster/"}, "mainEntityOfPage": "https://edittools.szy.monster/blog/polish-subtitles-free/"}</script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <a class="home" href="/"><h1>AutoSubtitler</h1></a>
+      <span class="by"><a href="/blog/">Blog</a></span>
+      <a class="btn btn-primary right" href="/">Make subtitles free</a>
+    </header>
+    <article class="post md">
+      <p class="crumbs"><a href="/blog/">Blog</a> › Guide</p>
+      <h1 class="post-title">Free Polish subtitles for video, made with Whisper</h1>
+      <p class="muted small">Updated 9 November 2026 · by Szymon at szy.monster</p>
+<p>Polish is harder for speech recognition than English. Words change their endings, there are many diacritics (ą, ć, ę, ł, ń, ó, ś, ź, ż), and fast speech runs words together. Whisper still handles Polish well, and you can make Polish subtitles for free in your browser.</p>
+<h2>How to make Polish subtitles</h2>
+<ol><li>Open <a href="/">AutoSubtitler</a> and drop in your video.</li><li>Set the language to <b>Polish</b>. Don't leave it on detect if you know the language: forcing it avoids the odd English sentence in the middle.</li><li>Choose the <b>Accurate model</b> for Polish. It's a bigger download, but it makes noticeably fewer mistakes with Polish endings than the fast one.</li><li>Press <b>Make subtitles</b>, check the preview, and download the .srt.</li></ol>
+<h2>Get names and words right</h2>
+<p>Whisper often "anglicises" Polish names. For example, it can hear <em>Szymon</em> as <em>Simon</em>. Open <b>More options</b> and add a line for each fix:</p>
+<pre><code>Szymon
+Simon =&gt; Szymon</code></pre>
+<p>The first line makes sure the name is always spelled and capitalised the same way. The second line replaces a word Whisper keeps mishearing. Changes only apply to whole words, and capitals don't matter.</p>
+<h2>Make sure the letters show correctly</h2>
+<p>The .srt is saved as UTF-8, which keeps ą, ę and the rest. Most editors read UTF-8 without any fuss. If you ever see characters like Ä… instead of ą, the program has read the file in the wrong encoding. Look for an encoding or "character set" option when importing and pick UTF-8.</p>
+<h2>Short or sentence-style subtitles?</h2>
+<p>Polish words are long, so short one-line chunks can feel choppy. Under <b>More options</b>, try <b>Classic two-line sentences</b> for interviews and talking-head videos, and keep <b>Short one-line chunks</b> for fast social media edits.</p>
+<p>Next: <a href="/blog/free-subtitling-for-video/">add the subtitles in your editor</a>.</p>
+    </article>
+    <aside class="cta">
+      <b>Make the .srt for free</b>
+      <span>Whisper subtitles in your browser. No sign-up, no upload, no watermark.</span>
+      <a class="btn btn-primary" href="/">Open AutoSubtitler</a>
+    </aside>
+    <nav class="related"><h2>Related</h2><ul><li><a href="/blog/davinci-resolve-free-subtitles/">Free subtitles for DaVinci Resolve: make an SRT and import it</a></li><li><a href="/blog/premiere-pro-free-subtitles/">Import free SRT subtitles into Premiere Pro</a></li><li><a href="/blog/final-cut-pro-free-subtitles/">Free subtitles in Final Cut Pro with an SRT file</a></li></ul></nav>
+    <footer class="foot">
+      <a href="/">AutoSubtitler</a>
+      <a href="/blog/">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="https://github.com/SzymonDevGit/editingTools" target="_blank" rel="noopener">Source on GitHub</a>
+      <a href="https://discord.gg/bHxaXgjpfe" target="_blank" rel="noopener">Bugs &amp; suggestions</a>
+    </footer>
+  </main>
+</body>
+</html>
