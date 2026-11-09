@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://edittools.szy.monster/sitemap.xml

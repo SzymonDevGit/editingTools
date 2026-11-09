@@ -120,3 +120,26 @@ select:focus, textarea:focus, .btn:focus-visible { outline: 2px solid var(--link
 .md h3 { font-size: 1.1em; margin: 20px 0 8px; }
 .md ul { padding-left: 1.6em; margin: 0 0 14px; }
 .foot-in { display: flex; gap: 16px; flex-wrap: wrap; max-width: 860px; margin: 0 auto; padding: 0 16px 40px; font-size: 13px; color: var(--fg-muted); }
+
+/* blog */
+.home { color: var(--fg); }
+.home:hover { text-decoration: none; }
+.post { margin-top: 24px; }
+.post-title { font-size: 30px; line-height: 1.25; font-weight: 600; margin: 8px 0 6px; }
+.crumbs { font-size: 13px; color: var(--fg-muted); margin: 0; }
+.post h2 { margin-top: 28px; }
+.md ul { padding-left: 1.6em; margin: 0 0 14px; }
+.md pre { background: var(--bg-subtle); border: 1px solid var(--border); border-radius: 6px; padding: 12px 14px; overflow-x: auto; margin: 0 0 14px; }
+.md pre code { background: none; padding: 0; font-size: 13px; }
+.cta { display: grid; gap: 4px; justify-items: start; margin-top: 28px; padding: 16px 20px; border: 1px solid var(--green); border-radius: 8px; background: var(--bg-subtle); }
+.cta span { color: var(--fg-muted); font-size: 14px; margin-bottom: 8px; }
+.related { margin-top: 28px; }
+.related h2 { font-size: 16px; margin: 0 0 8px; }
+.related ul { padding-left: 1.2em; margin: 0; }
+.blog-index { margin-top: 24px; }
+.md ul.cards { list-style: none; padding: 0; display: grid; gap: 10px; }
+.cards a { display: grid; gap: 2px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 6px; color: var(--fg); }
+.cards a:hover { border-color: var(--link); text-decoration: none; }
+.cards span { color: var(--fg-muted); font-size: 14px; }
+@media (max-width: 600px) { .post-title { font-size: 24px; } }
+.tagline { color: var(--fg-muted); margin: 16px 0 0; max-width: 70ch; }
