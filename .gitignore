@@ -1,0 +1,7 @@
+node_modules/
+.wrangler/
+# The PC tool's programs and models are big downloads, not part of the code (see autosubs/SETUP.md).
+autosubs/bin/
+autosubs/models/
+autosubs/sample/
+__pycache__/

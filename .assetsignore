@@ -1,0 +1,16 @@
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+README.md
+run-local.bat
+serve.py
+package.json
+package-lock.json
+scripts
+src
+node_modules
+.wrangler
+autosubs/bin
+autosubs/models
+autosubs/sample

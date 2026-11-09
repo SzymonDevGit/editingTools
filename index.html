@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoSubtitler · edittools</title>
+  <meta name="description" content="Make .srt subtitles for a video right in your browser with Whisper. Free, open source, and your video never leaves your computer.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="crumb" href="https://szy.monster/">szy.monster</a>
+      <span class="sep">/</span>
+      <a class="crumb" href="./">edittools</a>
+      <span class="sep">/</span>
+      <strong>AutoSubtitler</strong>
+    </div>
+  </header>
+
+  <section class="repohead">
+    <div class="wrap">
+      <div class="title-row">
+        <h1>AutoSubtitler</h1>
+        <span class="badge">Public</span>
+        <span class="badge">Free</span>
+        <div class="actions">
+          <a class="btn" href="https://github.com/SzymonDevGit/editingTools" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+            Source code
+          </a>
+          <a class="btn" href="https://github.com/SzymonDevGit/editingTools/tree/main/autosubs" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14ZM7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>
+            Windows version
+          </a>
+        </div>
+      </div>
+      <p class="lede">Drop in a video and get an <code>.srt</code> subtitle file, timed to the words. It runs on your own computer, so your video is never uploaded anywhere.</p>
+      <nav class="tabs" aria-label="Sections">
+        <a href="#make" class="on">Make subtitles</a>
+        <a href="#how">How it works</a>
+        <a href="#resolve">DaVinci Resolve</a>
+        <a href="#pc">PC version</a>
+      </nav>
+    </div>
+  </section>
+
+  <main class="wrap layout">
+    <div class="maincol">
+
+      <!-- ===== Uploader ===== -->
+      <section class="box" id="make">
+        <div class="box-head">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z"/></svg>
+          <span>Make subtitles</span>
+        </div>
+
+        <div class="box-body" id="step-pick">
+          <label class="drop" id="drop">
+            <input type="file" id="file" accept="video/*,audio/*">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <strong id="drop-title">Drop a video here, or click to choose one</strong>
+            <span class="muted" id="drop-sub">MP4, MOV, WebM, MP3, WAV… It stays on your computer.</span>
+          </label>
+
+          <div class="options">
+            <label>Language
+              <select id="lang">
+                <option value="en" selected>English</option>
+                <option value="pl">Polish</option>
+                <option value="auto">Detect it</option>
+              </select>
+            </label>
+            <label>Whisper model
+              <select id="model">
+                <option value="Xenova/whisper-base" selected>Fast (base, about 80 MB)</option>
+                <option value="Xenova/whisper-small">Accurate (small, about 250 MB)</option>
+              </select>
+            </label>
+            <label>Subtitle style
+              <select id="style">
+                <option value="short" selected>Short one-line chunks</option>
+                <option value="sentence">Classic two-line sentences</option>
+              </select>
+            </label>
+          </div>
+
+          <details class="terms">
+            <summary>Names and terms <span class="muted">(optional, works like terms.txt)</span></summary>
+            <p class="muted small">One per line. Their spelling and capitals are forced in the subtitles. For a word Whisper keeps mishearing, add a line like <code>Simon =&gt; Szymon</code>.</p>
+            <textarea id="terms" rows="5" spellcheck="false" placeholder="Szymon&#10;Teardown&#10;Simon => Szymon"></textarea>
+          </details>
+
+          <div class="go-row">
+            <button class="btn btn-primary" id="go" disabled>Make subtitles</button>
+            <span class="muted small" id="go-note">The Whisper model downloads from Hugging Face the first time, then your browser keeps it.</span>
+          </div>
+        </div>
+
+        <div class="box-body" id="step-run" hidden>
+          <ol class="stages" id="stages">
+            <li data-stage="audio">Reading the sound from your video</li>
+            <li data-stage="download">Getting Whisper ready <span class="muted">(downloads once)</span></li>
+            <li data-stage="vad">Finding where someone is talking</li>
+            <li data-stage="whisper">Writing down the words</li>
+            <li data-stage="python">Cutting them into subtitles with autosubs.py</li>
+          </ol>
+          <div class="bar"><div id="bar-fill"></div></div>
+          <p class="muted small" id="run-note">Keep this tab open. A 10 minute video takes a few minutes on a recent computer.</p>
+        </div>
+
+        <div class="box-body" id="step-done" hidden>
+          <div class="result">
+            <video id="preview" controls playsinline></video>
+            <div class="result-side">
+              <p id="done-note"><strong>Done.</strong></p>
+              <div class="go-row">
+                <button class="btn btn-primary" id="download">Download .srt</button>
+                <button class="btn" id="again">Do another video</button>
+              </div>
+              <p class="muted small">You can fix words or times in the box below before downloading. The preview updates when you click outside the box.</p>
+            </div>
+          </div>
+          <textarea id="srt" rows="12" spellcheck="false" aria-label="Subtitle file"></textarea>
+        </div>
+
+        <div class="flash" id="error" hidden></div>
+      </section>
+
+      <!-- ===== README-style explanation ===== -->
+      <article class="box readme">
+        <div class="box-head">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></svg>
+          <span>README</span>
+        </div>
+        <div class="box-body md">
+
+          <h2 id="how">How it works</h2>
+          <p>Your video goes through five steps. The first three use AI models that run inside your browser. The last two are the same Python file the Windows version uses, <a href="https://github.com/SzymonDevGit/editingTools/blob/main/autosubs/autosubs.py" target="_blank" rel="noopener">autosubs.py</a>, running in the browser with Pyodide.</p>
+
+          <figure class="flow" aria-label="Flow chart: video, audio, Whisper and Silero side by side, autosubs.py, .srt file">
+            <div class="node n-in">
+              <span class="num">1</span>
+              <b>Your video</b>
+              <span>Opened by your browser, never uploaded</span>
+            </div>
+            <div class="arrow" aria-hidden="true"></div>
+            <div class="node n-js">
+              <span class="num">2</span>
+              <b>Sound track</b>
+              <span>Mixed to one channel at 16,000 samples a second</span>
+              <em>PC: ffmpeg</em>
+            </div>
+            <div class="arrow split" aria-hidden="true"></div>
+            <div class="pair">
+              <div class="node n-ai">
+                <span class="num">3a</span>
+                <b>Whisper</b>
+                <span>Writes down what is said, with a time for every word</span>
+                <em>PC: whisper.cpp, large-v3-turbo</em>
+              </div>
+              <div class="node n-ai">
+                <span class="num">3b</span>
+                <b>Silero VAD</b>
+                <span>Marks exactly when someone is talking, even over game sound or music</span>
+                <em>PC: the same Silero v5 model</em>
+              </div>
+            </div>
+            <div class="arrow join" aria-hidden="true"></div>
+            <div class="node n-py">
+              <span class="num">4</span>
+              <b>autosubs.py</b>
+              <ul>
+                <li>Splits at sentence ends and pauses</li>
+                <li>Cuts long sentences into short chunks at commas and natural breaks</li>
+                <li>Moves each start and end onto real speech</li>
+                <li>Fixes the spelling of your names and terms</li>
+              </ul>
+              <em>The same file as the PC version</em>
+            </div>
+            <div class="arrow" aria-hidden="true"></div>
+            <div class="node n-out">
+              <span class="num">5</span>
+              <b>.srt file</b>
+              <span>Ready for DaVinci Resolve, Premiere, YouTube…</span>
+            </div>
+            <figcaption>
+              <span class="key k-ai"></span>AI model in your browser
+              <span class="key k-js"></span>Your browser's own audio decoder
+              <span class="key k-py"></span>The original Python script
+            </figcaption>
+          </figure>
+
+          <h3>Why there are two models</h3>
+          <p>Whisper is great at the words but its times can drift by a second or more after music or silence. Silero only answers "is someone talking right now?", but it answers that very precisely. autosubs.py takes the words from Whisper and the timing from Silero, so a subtitle never pops up while nobody is speaking.</p>
+
+          <h3>How a sentence becomes subtitles</h3>
+          <p>A real example from Szymon's sample clip. Each block is one subtitle. The pause of almost a second after "folder." starts a new sentence, and the long sentence after it is cut into chunks of at most 6 words, never ending on a word like "at" or "the".</p>
+          <figure class="timeline-fig">
+            <svg id="timeline" viewBox="0 0 720 166" role="img" aria-label="Timeline of subtitles 14 to 19, from 42.6 to 51 seconds">
+              <title>Subtitles 14 to 19 of the sample clip on a timeline</title>
+            </svg>
+          </figure>
+
+          <h3>Differences from the PC version</h3>
+          <table>
+            <thead><tr><th></th><th>This page</th><th>PC version</th></tr></thead>
+            <tbody>
+              <tr><td>Whisper model</td><td>base or small</td><td>large-v3-turbo (most accurate)</td></tr>
+              <tr><td>Speed</td><td>Depends on your computer and browser</td><td>About as long as the video, on the CPU</td></tr>
+              <tr><td>Names as a hint to Whisper</td><td>No, spelling is fixed afterwards</td><td>Yes, and fixed afterwards</td></tr>
+              <tr><td>Several videos at once</td><td>One at a time</td><td>Drag them all onto Subtitle.bat</td></tr>
+              <tr><td>Cutting and timing</td><td colspan="2" class="same">The same autosubs.py</td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="resolve">Use it in DaVinci Resolve (free)</h2>
+          <ol>
+            <li><b>File › Import › Subtitle…</b> and pick the <code>.srt</code>. It lands in the Media Pool.</li>
+            <li>Drag it from the Media Pool onto the timeline above the video, starting at the same point as the clip. Resolve adds a Subtitle track for it.</li>
+            <li>Click the subtitle track to edit text or timing in the Inspector. To style the whole track: select the track header, then <b>Inspector › Track</b> (font, size, outline, position).</li>
+            <li>To export: <b>Deliver page › Subtitle Settings</b>, tick <b>Export Subtitle</b>, then <b>Burn into video</b> for captions baked into the picture, or <b>As a separate file</b> for YouTube-style captions.</li>
+          </ol>
+
+          <h2 id="pc">Run it on your PC</h2>
+          <p>The Windows version uses the biggest Whisper model and can do many videos at once. Drag video files onto <code>Subtitle.bat</code> and an <code>.srt</code> appears next to each one.</p>
+          <ol>
+            <li>Download the <a href="https://github.com/SzymonDevGit/editingTools/tree/main/autosubs" target="_blank" rel="noopener">autosubs folder</a> and install <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python 3</a>.</li>
+            <li>Add whisper.cpp, ffmpeg and the two model files. The <a href="https://github.com/SzymonDevGit/editingTools/blob/main/autosubs/SETUP.md" target="_blank" rel="noopener">setup guide</a> lists where to get each one.</li>
+            <li>Put your names in <code>terms.txt</code> and drag a video onto <code>Subtitle.bat</code>.</li>
+          </ol>
+        </div>
+      </article>
+    </div>
+
+    <!-- ===== Sidebar ===== -->
+    <aside class="side">
+      <h2>About</h2>
+      <p>Free subtitles for your videos with Whisper, made for editing in DaVinci Resolve.</p>
+      <ul class="facts">
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4a4 4 0 0 1 8 0v2h.25c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-5.5C2 6.784 2.784 6 3.75 6H4Zm8.25 3.5h-8.5a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25ZM10.5 6V4a2.5 2.5 0 1 0-5 0v2Z"/></svg>Your video stays on your computer</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg><a href="https://github.com/SzymonDevGit/editingTools" target="_blank" rel="noopener">Open source on GitHub</a></li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z"/></svg>No sign-up, no limits</li>
+      </ul>
+      <div class="topics">
+        <span>whisper</span><span>subtitles</span><span>srt</span><span>davinci-resolve</span><span>silero-vad</span><span>pyodide</span>
+      </div>
+      <h2>Built with</h2>
+      <ul class="plain small">
+        <li><a href="https://github.com/openai/whisper" target="_blank" rel="noopener">Whisper</a> by OpenAI</li>
+        <li><a href="https://github.com/snakers4/silero-vad" target="_blank" rel="noopener">Silero VAD</a></li>
+        <li><a href="https://github.com/huggingface/transformers.js" target="_blank" rel="noopener">Transformers.js</a> and ONNX Runtime</li>
+        <li><a href="https://pyodide.org/" target="_blank" rel="noopener">Pyodide</a> (Python in the browser)</li>
+        <li><a href="https://github.com/ggml-org/whisper.cpp" target="_blank" rel="noopener">whisper.cpp</a> (PC version)</li>
+      </ul>
+      <h2>Help</h2>
+      <ul class="plain small">
+        <li><a href="https://discord.gg/bHxaXgjpfe" target="_blank" rel="noopener">Bugs and suggestions on Discord</a></li>
+        <li><a href="mailto:info@cheltenhamdata.co.uk">info@cheltenhamdata.co.uk</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <span>AutoSubtitler by <a href="https://szy.monster/">szy.monster</a></span>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/SzymonDevGit/editingTools" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://discord.gg/bHxaXgjpfe" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

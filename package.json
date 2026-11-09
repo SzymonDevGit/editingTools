@@ -1,0 +1,14 @@
+{
+  "name": "edittools",
+  "private": true,
+  "description": "AutoSubtitler web page: bundles the speech worker. The page itself is plain static files.",
+  "scripts": {
+    "build": "esbuild src/asr-worker.js --bundle --format=esm --target=es2022 --alias:onnxruntime-web/webgpu=onnxruntime-web/wasm --outfile=asr-worker.js && node scripts/copy-vendor.mjs"
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "4.3.2",
+    "esbuild": "0.25.12",
+    "onnxruntime-web": "1.31.0-dev.20260914-8d85527a0",
+    "@ricky0123/vad-web": "0.0.31"
+  }
+}
