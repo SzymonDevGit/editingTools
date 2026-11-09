@@ -142,3 +142,4 @@ select:focus, textarea:focus, .btn:focus-visible { outline: 2px solid var(--link
 .cards a:hover { border-color: var(--link); text-decoration: none; }
 .cards span { color: var(--fg-muted); font-size: 14px; }
 @media (max-width: 600px) { .post-title { font-size: 24px; } }
+.tagline { color: var(--fg-muted); margin: 16px 0 0; max-width: 70ch; }

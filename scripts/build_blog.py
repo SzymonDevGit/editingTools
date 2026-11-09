@@ -106,7 +106,12 @@ PAGE = """<!doctype html>
   <meta property="og:description" content="{desc}">
   <meta property="og:url" content="{url}">
   <meta property="og:site_name" content="AutoSubtitler">
+  <meta property="og:image" content="https://edittools.szy.monster/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="color-scheme" content="dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
   {jsonld}
 </head>
@@ -167,7 +172,14 @@ def main():
             "datePublished": DATE, "dateModified": DATE,
             "author": {"@type": "Person", "name": "Szymon"},
             "publisher": {"@type": "Organization", "name": "szy.monster", "url": "https://szy.monster/"},
-            "mainEntityOfPage": url,
+            "mainEntityOfPage": url, "image": f"{SITE}/og-image.png",
+        }) + jsonld({
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "AutoSubtitler", "item": f"{SITE}/"},
+                {"@type": "ListItem", "position": 2, "name": "Guides", "item": f"{SITE}/blog/"},
+                {"@type": "ListItem", "position": 3, "name": p["title"], "item": url},
+            ],
         })
         out = os.path.join(ROOT, "blog", p["slug"])
         os.makedirs(out, exist_ok=True)

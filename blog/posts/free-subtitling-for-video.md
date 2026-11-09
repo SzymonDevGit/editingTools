@@ -48,3 +48,30 @@ Yes. There's no account, no watermark and no length limit. It runs on your own c
 - **Clear sound wins.** Whisper copes with background music, but a voice close to the microphone is always more accurate.
 - **Add names under More options.** Names and brand words are where speech recognition slips most. Type them in once and their spelling is fixed in every subtitle.
 - **Pick the accurate model for hard audio.** It's a bigger download (about 250 MB) but makes fewer mistakes with accents and fast talk.
+
+## Free subtitling tools compared
+
+There are a few honest free options. Each suits a different job:
+
+- **AutoSubtitler (this site)**: Whisper in your browser. It's free with no limits, works offline after the first model download, and gives you an .srt for any editor. It's slower than a server on old computers.
+- **YouTube's automatic captions**: free, but only for videos you upload to YouTube. They often take hours to appear and get names wrong. You can download them, but only from your own videos.
+- **Your editor's built-in captions**: convenient where they're included. In DaVinci Resolve they need the paid Studio version, in Premiere Pro they depend on your plan, and in CapCut and Filmora they often need credits or a subscription.
+- **Typing them yourself**: free and exact, but it takes several times longer than the video.
+
+For most people, the quickest free route is to let Whisper write the first draft and spend a few minutes fixing it.
+
+## Frequently asked questions
+
+**Is there a time limit?** No. The only limit is your computer's memory and patience: a long video takes a while, because the work happens on your own machine. For long recordings, the [Windows version](https://github.com/SzymonDevGit/editingTools/tree/main/autosubs) is faster.
+
+**Does my video get uploaded?** No. Your browser reads the video and does all the work on your computer. The only download is the Whisper model itself, from Hugging Face, the first time you use it.
+
+**Which languages work?** English and Polish are in the menu, and **Detect language** handles most of the languages Whisper knows, including Spanish, German, French, Italian and Portuguese. Accuracy is best for widely spoken languages. See the [Polish guide](/blog/polish-subtitles-free/) for tips on harder languages.
+
+**How accurate is it?** On clear speech, Whisper gets the large majority of words right, and timing is matched to the speech. Names, slang and heavy background noise cause most of the mistakes. Add names under **More options**, and use the **Accurate model** for difficult audio.
+
+**Can I translate the subtitles?** Not in AutoSubtitler yet. YouTube can auto-translate uploaded captions for viewers. See [uploading an SRT to YouTube](/blog/youtube-upload-srt-subtitles/).
+
+**What format do I get?** A standard [.srt file](/blog/what-is-an-srt-file/), in UTF-8. Every major editor and video platform accepts it.
+
+**Does it work on a phone?** It runs in mobile browsers, but phones have less memory and get warm, so a laptop or desktop is much quicker.
