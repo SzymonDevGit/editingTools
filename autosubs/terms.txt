@@ -1,0 +1,10 @@
+# Names and terms Whisper should spell right. One per line, or comma separated.
+# They are handed to Whisper as a hint, so keep the list short (a few dozen at most).
+Szymon
+Teardown
+Scrapyard
+
+# Fix-ups for words Whisper still gets wrong: wrong => right
+# Applied after transcription, whole words only, ignoring case. Remove the # to use one.
+# Simon => Szymon
+# Shimon => Szymon

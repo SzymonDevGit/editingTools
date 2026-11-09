@@ -1,0 +1,8 @@
+# Lets Whisper use several CPU cores (WebAssembly threads need a "cross-origin isolated" page).
+# "credentialless" still allows the Cloudflare Web Analytics script and the model download.
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless
+
+/vendor/*
+  Cache-Control: public, max-age=604800

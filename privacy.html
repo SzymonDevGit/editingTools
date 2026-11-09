@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · AutoSubtitler</title>
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="crumb" href="https://szy.monster/">szy.monster</a>
+      <span class="sep">/</span>
+      <a class="crumb" href="./">edittools</a>
+      <span class="sep">/</span>
+      <strong>Privacy</strong>
+    </div>
+  </header>
+
+  <main class="wrap doc">
+    <article class="box readme">
+      <div class="box-head"><span>PRIVACY.md</span></div>
+      <div class="box-body md">
+        <p><a href="./">← Back to AutoSubtitler</a></p>
+        <h2 style="margin-top:0">Privacy</h2>
+        <p class="muted">Last updated 9 November 2026</p>
+        <p><b>The short version:</b> AutoSubtitler runs in your browser. Your video, its sound and the subtitles never leave your computer, and nothing you do on the page is sent to us. There are no ads, no cookies and no sign-up. Visits are only counted anonymously by Cloudflare.</p>
+
+        <h3>Who runs AutoSubtitler</h3>
+        <p>AutoSubtitler is part of szy.monster and is run by Szymon. For anything about privacy or your data, email <a href="mailto:info@cheltenhamdata.co.uk">info@cheltenhamdata.co.uk</a>.</p>
+
+        <h3>Your video</h3>
+        <p>When you pick a video, your browser opens it on your own computer. The sound is turned into text by AI models that run inside the browser tab, and the subtitle file is made there too. Nothing is uploaded: not the video, not the sound, not the words. Closing the tab clears it all.</p>
+
+        <h3>The Whisper model download</h3>
+        <p>The first time you press <b>Make subtitles</b>, your browser downloads the Whisper speech model (about 80 MB, or 250 MB for the accurate one) from <a href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face</a>. Nothing loads from Hugging Face before you press the button. Like any website, Hugging Face sees your IP address and browser details when it sends the files, but no part of your video. See <a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Hugging Face's privacy policy</a>.</p>
+
+        <h3>What is kept in your browser</h3>
+        <p>So you don't download the same files every time, your browser keeps a copy of the Whisper model and the speech engine in its cache storage. It holds only those program files, nothing about you or your videos. AutoSubtitler doesn't use cookies or localStorage. To remove the copy, clear this site's data in your browser's settings.</p>
+
+        <h3>Other companies</h3>
+        <ul>
+          <li><b>Cloudflare</b> hosts this site. Like any web server it sees your IP address and browser details to send you the page and protect it from attacks. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's privacy policy</a>.</li>
+          <li><b>Cloudflare Web Analytics</b> counts visits so we can see how the site is used: which pages are opened, roughly which country and browser they come from, the site that linked here, and how fast pages load. It doesn't use cookies or store anything in your browser, doesn't follow you to other sites, and we only see totals, never individual visitors. A small script for it loads from Cloudflare (static.cloudflareinsights.com). If you'd rather not be counted, any ad or tracker blocker stops it, and the site works the same. See <a href="https://developers.cloudflare.com/web-analytics/about/" target="_blank" rel="noopener">how Cloudflare Web Analytics works</a>.</li>
+          <li><b>Hugging Face</b>, for the model download, as above.</li>
+          <li>Everything else (the page, Python, the speech detector and the speech engine) comes from this site's own server. The page uses your computer's own fonts. The GitHub and Discord links only take you there if you click them.</li>
+        </ul>
+
+        <h3>Your rights</h3>
+        <p>Under UK data protection law (UK GDPR) you can ask what data we hold about you, and have it corrected or deleted. We don't keep anything about you on our side. If you have a question, email <a href="mailto:info@cheltenhamdata.co.uk">info@cheltenhamdata.co.uk</a>. You can also complain to the UK's data protection regulator, the <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">ICO</a>.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <span>AutoSubtitler by <a href="https://szy.monster/">szy.monster</a></span>
+      <a href="./">AutoSubtitler</a>
+      <a href="https://github.com/SzymonDevGit/editingTools" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://discord.gg/bHxaXgjpfe" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </footer>
+</body>
+</html>
